@@ -14,7 +14,7 @@ import rootReducer from './reducers'
 import {setUser, clearUser} from './actions'
 import Spinner from './Spinner'
 import Login from './auth/Login'
-
+import "semantic-ui-css/semantic.min.css";
 const store = createStore(rootReducer)
 class Root extends React.Component{
     componentDidMount(){
