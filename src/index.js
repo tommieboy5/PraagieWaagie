@@ -64,4 +64,4 @@ ReactDOM.render(
     </Provider>,
     document.getElementById('root')
 )
-ServiceWorker.register()
+ServiceWorker.unregister()
