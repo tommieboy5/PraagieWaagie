@@ -3,5 +3,9 @@ body,
 .app{
   height:100vh;
   padding:1em;
-  background:#1b1c1d
+  background:#1b1c1d;
+  overflow-x: hidden;
+}
+body {
+  position: relative;
 }
