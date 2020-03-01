@@ -139,8 +139,8 @@ class Register extends Component {
                 <ParticleContainer/>
                 <Grid textAlign="center" verticalAlign="middle" className="app">
                     <Grid.Column style={{maxWidth: 450}}>
-                        <Header as="h1" icon color="white" textAlign="center">
-                            <Icon name="signup" color="white"/>
+                        <Header as="h1" icon color="blue" textAlign="center">
+                            <Icon name="signup" color="blue"/>
                             Register for GLU-Hub
                         </Header>
                         <Form onSubmit={this.handleSubmit} size="large">
@@ -196,7 +196,7 @@ class Register extends Component {
                                 size="large"
                             >
                                 Register
-                            </Button>
+                            </Button><br/>
                         </Form>
                         {errors.length > 0 && (
                             <Message error>
@@ -204,9 +204,7 @@ class Register extends Component {
                                 {this.displayErrors(errors)}
                             </Message>
                         )}
-                        <Message>
-                            Already have an acount? <Link to="/owo">Login</Link>
-                        </Message>
+                        <Link to="/owo"><Button fluid size="large">lmao</Button></Link>
                     </Grid.Column>  
                 </Grid>
             </div>
