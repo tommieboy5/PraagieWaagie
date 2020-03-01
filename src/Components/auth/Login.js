@@ -1,5 +1,5 @@
 import React from 'react'
-import firebase from '../firebase'
+import firebase from '../../firebase'
 import {
     Button,
     Form,
@@ -10,7 +10,7 @@ import {
     Label
 } from 'semantic-ui-react'
 import {Link} from 'react-router-dom'
-import ParticleContainer from '../Components/Containers/ParticleContainer'
+import ParticleContainer from '../Containers/ParticleContainer'
 export default class Login extends React.Component{
     state = {
         email:"",
@@ -119,7 +119,7 @@ export default class Login extends React.Component{
                                 Login
                             </Button>
                             <br/>
-                            <Link to="/"><Button fluid size="large">Register</Button></Link>
+                            <Link to="/umu"><Button fluid size="large">Register</Button></Link>
                             <br/>
                             <Button icon onClick={this.logInGoogle} labelPosition="left">
                                 <Icon name="google"/>
