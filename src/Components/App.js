@@ -6,7 +6,7 @@ import NavBarContainer from './Containers/NavBarContainer'
 function App() {
   const signOut = () => firebase.auth().signOut()
   return (
-    <div className="App">
+    <div className="app">
         <NavBarContainer/>
     </div>
   );

@@ -17,6 +17,7 @@ import Spinner from './Spinner'
 import Login from './Components/auth/Login'
 import "semantic-ui-css/semantic.min.css";
 import Register from './Components/auth/Register'
+import Account from './Components/screens/Account'
 const store = createStore(rootReducer)
 class Root extends React.Component{
     componentDidMount(){
@@ -40,6 +41,7 @@ class Root extends React.Component{
                 <Route exact path="/" component={App}/>
                 <Route path="/owo" component={Login} />
                 <Route path="/umu" component={Register}/>
+                <Route path="/omae" component={Account}/>
             </Switch>
         )
     }
