@@ -17,7 +17,7 @@ import Spinner from './Spinner'
 import Login from './Components/auth/Login'
 import "semantic-ui-css/semantic.min.css";
 import Register from './Components/auth/Register'
-import Account from './Components/screens/Account'
+import Account from './Components/screens/Account/Account'
 const store = createStore(rootReducer)
 class Root extends React.Component{
     componentDidMount(){
