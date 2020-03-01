@@ -8,6 +8,7 @@ import {
     Route,
     withRouter
 } from 'react-router-dom'
+import * as ServiceWorker from './serviceWorker'
 import {createStore} from 'redux'
 import {Provider, connect} from 'react-redux'
 import rootReducer from './reducers'
@@ -63,3 +64,4 @@ ReactDOM.render(
     </Provider>,
     document.getElementById('root')
 )
+ServiceWorker.register()
