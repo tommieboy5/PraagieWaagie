@@ -19,7 +19,16 @@ class UserPanel extends React.Component{
         } = this.state
 
         return(
-            <p>{user.displayName}</p>
+            <Grid>
+                <Grid.Column>
+                    <Grid.Row style={{padding:"1.2em", margin:0}}>
+                        <Header inverted floated="left">
+                            <Icon name="arrow left"/>
+                            <Header.Content>User Settings</Header.Content>
+                        </Header>
+                    </Grid.Row>
+                </Grid.Column>
+            </Grid>
         )
     }
 }

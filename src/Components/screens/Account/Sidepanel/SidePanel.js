@@ -9,7 +9,6 @@ class SidePanel extends React.Component{
             <Menu
                 size="large"
                 inverted
-                fixed="left"
                 vertical
                 style={{fontSize:"1.2rem"}}
                 className="menu-sidepanel"
