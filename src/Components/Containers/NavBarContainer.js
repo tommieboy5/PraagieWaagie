@@ -4,18 +4,22 @@ import {makeStyles} from '@material-ui/core/styles'
 import BottomNavigationAction from '@material-ui/core/BottomNavigationAction'
 import RestoreIcon from '@material-ui/icons/Restore'
 import FavoriteIcon from '@material-ui/icons/Favorite'
-import LocationOnIcon from '@material-ui/icons/LocationOn'
-
+import PersonIcon from '@material-ui/icons/Person';
+import Account from '../screens/Account'
+import {Link, useHistory} from 'react-router-dom'
 const useStyles = makeStyles({
     root: {
       width:'100%',
     },
   });
+
+
   
-  export default function NavBarContainer() {
+  
+export default function NavBarContainer() {
     const classes = useStyles();
     const [value, setValue] = React.useState(0);
-  
+    const history = useHistory()
     return (
       <BottomNavigation
         value={value}
@@ -28,7 +32,7 @@ const useStyles = makeStyles({
       >
         <BottomNavigationAction label="Recents" icon={<RestoreIcon />} />
         <BottomNavigationAction label="Favorites" icon={<FavoriteIcon />} />
-        <BottomNavigationAction label="Nearby" icon={<LocationOnIcon />} />
+        <BottomNavigationAction label="Account" fontSize="large" onClick={() => history.push('/omae')} icon={<PersonIcon />}/>
       </BottomNavigation>
     );
   }

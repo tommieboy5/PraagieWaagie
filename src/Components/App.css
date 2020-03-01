@@ -5,7 +5,18 @@ body,
   padding:1em;
   background:#1b1c1d;
   overflow: hidden;
+  color:white
 }
 body{
   position:relative;
+}
+
+.no{
+  text-decoration: none;
+  color:grey;
+}
+
+.no:visited{
+  text-decoration: none;
+  color:grey;
 }
