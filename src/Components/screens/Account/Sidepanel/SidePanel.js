@@ -14,7 +14,6 @@ class SidePanel extends React.Component{
                 className="menu-sidepanel"
             >   
                 <UserPanel currentUser={currentUser}/>
-                <NavBarContainer/>
             </Menu>
         )
     }

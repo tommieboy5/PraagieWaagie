@@ -7,6 +7,9 @@ import SidePanel from './Sidepanel/SidePanel'
 const Account = ({currentUser}) =>(
     <Grid columns="equal" className="app">
         <SidePanel key={currentUser && currentUser.uid} currentUser={currentUser}/>
+        <Grid.Column>
+            
+        </Grid.Column>
     </Grid>
 )
 
