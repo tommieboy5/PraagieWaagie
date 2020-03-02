@@ -5,7 +5,7 @@ import BottomNavigationAction from '@material-ui/core/BottomNavigationAction'
 import RestoreIcon from '@material-ui/icons/Restore'
 import FavoriteIcon from '@material-ui/icons/Favorite'
 import PersonIcon from '@material-ui/icons/Person';
-import Account from '../screens/Account'
+import Account from '../screens/Account/Account'
 import {Link, useHistory} from 'react-router-dom'
 const useStyles = makeStyles({
     root: {
