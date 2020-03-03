@@ -21,7 +21,7 @@ class UserPanel extends React.Component{
         return(
             <Grid>
                 <Grid.Column>
-                    <Grid.Row style={{padding:"1.2em", margin:0}}>
+                    <Grid.Row style={{paddingTop:"1.2em"}}>
                         <Header inverted floated="left">
                             <Link className="no" to="/"><Icon name="arrow left"/></Link>
                             <Header.Content>User Settings</Header.Content>
