@@ -1,5 +1,15 @@
 # Changelog Praagie-Waagie 
 
+# 03/03/2020
+## Hotfix 0.2.2
+### Features added
+- Updated the UI to run smoother
+
+### Features removed
+- A lot of unused code
+- Hella bugs
+
+
 # 01/03/2020
 ## Patch 0.2.0
 ### Features added
