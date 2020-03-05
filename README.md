@@ -1,5 +1,12 @@
 # Changelog Praagie-Waagie 
 
+# 06/03/2020
+## Hotfix 0.2.6
+### Features added 
+- Reset your password
+    - If you forgot your password, or just want to change it: you can do so now in your account view and in the login screen
+
+
 # 05/03/2020
 ## Hotfix 0.2.5
 ### Features added
