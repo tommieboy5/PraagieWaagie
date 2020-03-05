@@ -21,9 +21,24 @@ body{
   color:white;
 }
 
-.avatar-grid{
-  padding-top:50px;
-}
 .sign_out_icon{
   float:right;
+}
+
+.right{
+  float:right;
+}
+
+.header-name{
+  padding-top:25px!important;
+}
+
+.avatar-text{
+  padding-left:20px!important;
+  text-decoration: underline;
+  color:lightblue;
+}
+
+.grid-name{
+  color:white!important;
 }
