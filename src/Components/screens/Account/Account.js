@@ -2,11 +2,11 @@ import React from 'react'
 import {Grid} from 'semantic-ui-react'
 import '../../App.css'
 import {connect} from 'react-redux'
-import SidePanel from './Sidepanel/SidePanel'
+import UserPanel from './UserPanel'
 
 const Account = ({currentUser}) =>(
     <Grid columns="equal" className="app">
-        <SidePanel key={currentUser && currentUser.uid} currentUser={currentUser}/>
+        <UserPanel key={currentUser && currentUser.uid} currentUser={currentUser}/>
         <Grid.Column>
             
         </Grid.Column>
