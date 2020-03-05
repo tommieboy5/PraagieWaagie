@@ -7,7 +7,8 @@ import {
     Header,
     Message,
     Icon,
-    Label
+    Label,
+    Modal
 } from 'semantic-ui-react'
 import {Link} from 'react-router-dom'
 import ParticleContainer from '../Containers/ParticleContainer'
@@ -16,6 +17,7 @@ export default class Login extends React.Component{
         email:"",
         password:"",
         errors:[],
+        reset:false,
         loading:false,
         auth:firebase.auth(),
         usersRef:firebase.database().ref("users"),
@@ -29,12 +31,16 @@ export default class Login extends React.Component{
     }
 
     resetPassword = event =>{
+        event.preventDefault()
         this.state.auth.sendPasswordResetEmail(this.state.email).then(() =>{
             console.log('Email send')
         }).catch(error =>{
             console.log(error)
         })
     }
+
+    openReset = () => this.setState({reset:true})
+    closeReset =() => this.setState({reset:false})
 
     handleSubmit = event =>{
         event.preventDefault()
@@ -125,7 +131,34 @@ export default class Login extends React.Component{
                                 <Icon name="google"/>
                                 Login with Google
                             </Button>
+                            <Button onClick={this.openReset}>Forgot password</Button>
                         </Form>
+                        <Modal open={this.state.reset} onClose={this.closeReset} size="mini">
+                        <Modal.Header>
+                            Wachtwoord vergeten
+                        </Modal.Header>
+                        <Modal.Content>
+                            <Form onSubmit={this.resetPassword} size="mini">
+                                <Form.Input
+                                    fluid
+                                    name="email"
+                                    icon="mail"
+                                    placeholder="email"
+                                    onChange={this.handleChange}
+                                    value={this.state.email}
+                                    type="email"
+                                    iconPosition="left"
+                                />
+                                <Button 
+                                    color="grey"
+                                    fluid
+                                    size="large"
+                                >
+                                    Submit
+                                </Button>
+                            </Form>
+                        </Modal.Content>
+                    </Modal>
                     </Grid.Column>
                 </Grid>
             </div>
