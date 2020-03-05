@@ -26,7 +26,19 @@ class UserPanel extends React.Component{
                             <Link className="no" to="/"><Icon name="arrow left"/></Link>
                             <Header.Content>User Settings</Header.Content>
                         </Header>
+                        <Icon name="sign-out" classname="sign_out_icon" size="large"/>
                     </Grid.Row>
+                    <React.Fragment>
+                        <Grid.Row className="avatar-grid">
+                            <Grid.Column>
+                                <Image
+                                    src={user.photoURL}
+                                    size="small"
+                                    wrapped
+                                />
+                            </Grid.Column>
+                        </Grid.Row>
+                    </React.Fragment>
                 </Grid.Column>
             </Grid>
         )

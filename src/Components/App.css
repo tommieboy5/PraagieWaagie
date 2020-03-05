@@ -20,3 +20,10 @@ body{
   text-decoration: none;
   color:white;
 }
+
+.avatar-grid{
+  padding-top:50px;
+}
+.sign_out_icon{
+  float:right;
+}
