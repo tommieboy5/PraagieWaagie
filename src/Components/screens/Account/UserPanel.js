@@ -109,21 +109,36 @@ class UserPanel extends React.Component{
                             <Link className="no" to="/"><Icon name="arrow left"/></Link>
                             <Header.Content>User Settings</Header.Content>
                         </Header>
-                        <Icon name="sign-out" className="sign_out_icon" size="large"/>
+                        <Icon name="sign-out" onClick={this.handleSignout} className="sign_out_icon" size="large"/>
                     </Grid.Row>
                     <React.Fragment>
-                        <Grid.Row className="avatar-grid">
+                        <Grid.Row>
                             <Grid.Column>
                                 <Image
                                     src={user.photoURL}
                                     size="small"
-                                    wrapped
                                     circular
                                     onClick={this.openModal}
-                                />
+                                /> 
+                                <p className="avatar-text" onClick={this.openModal}>Change avatar</p>
                             </Grid.Column>
+                            <Header className="header-name" inverted>
+                                </Header>
                         </Grid.Row>
                     </React.Fragment>
+                    <React.Fragment>
+                        <Grid.Row>
+                            <Grid.Column className="grid-name">
+                                <Header inverted>
+                                    <Header.Content>
+                                        User name:
+                                        <br/>
+                                        {user.displayName}
+                                    </Header.Content>
+                                </Header>
+                            </Grid.Column>
+                        </Grid.Row>
+                    </React.Fragment> 
                     <Modal open={modal} onClose={this.closeModal} closeIcon>
                         <Modal.Header>Change avatar</Modal.Header>
                         <Modal.Content>
