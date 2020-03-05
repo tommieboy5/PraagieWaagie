@@ -1,7 +1,7 @@
 import React from 'react'
 import firebase from '../../../firebase'
 import AvatarEditor from 'react-avatar-editor'
-import {Grid, Header, Icon, Image, Button, Input, Message, Modal} from 'semantic-ui-react'
+import {Grid, Header, Icon, Image,Form, Button, Input, Message, Modal} from 'semantic-ui-react'
 import {Link, useHistory} from 'react-router-dom'
 
 class UserPanel extends React.Component{
@@ -16,13 +16,17 @@ class UserPanel extends React.Component{
         currentUser: this.props.currentUser,
         userRef: firebase.auth().currentUser,
         blob:null,
+        auth:firebase.auth(),
+        reset:false,
+        email:"",
         metadata:{
             contentType: "image/png"
         }
     }     
     openModal = () => this.setState({modal:true})
     closeModal = () => this.setState({modal:false})
-
+    openReset = () => this.setState({reset:true})
+    closeReset = () => this.setState({reset:false})
 
     uploadCroppedImage =() =>{
         const {storageRef, userRef, blob, metadata} = this.state
@@ -38,7 +42,7 @@ class UserPanel extends React.Component{
                     )
                 })
             })
-    }
+    }   
 
     changeAvatar = () =>{
         this.state.userRef
@@ -89,6 +93,15 @@ class UserPanel extends React.Component{
         }
     }
 
+    handleEventChange = event =>{
+        this.setState({ [event.target.name]: event.target.value})
+    }
+
+    handleResetPassword = event =>{
+        event.preventDefault()
+        this.state.auth.sendPasswordResetEmail(this.state.email)
+    }
+
     handleSignout = () => firebase.auth().signOut()
 
     render(){
@@ -122,8 +135,6 @@ class UserPanel extends React.Component{
                                 /> 
                                 <p className="avatar-text" onClick={this.openModal}>Change avatar</p>
                             </Grid.Column>
-                            <Header className="header-name" inverted>
-                                </Header>
                         </Grid.Row>
                     </React.Fragment>
                     <React.Fragment>
@@ -136,6 +147,7 @@ class UserPanel extends React.Component{
                                         {user.displayName}
                                     </Header.Content>
                                 </Header>
+                                <Button onClick={this.openReset}>Change password</Button>
                             </Grid.Column>
                         </Grid.Row>
                     </React.Fragment> 
@@ -155,10 +167,10 @@ class UserPanel extends React.Component{
                                             <AvatarEditor
                                                 ref={node => (this.avatarEditor = node)}
                                                 image={previewImage}
-                                                width={120}
-                                                height={120}
+                                                width={200}
+                                                height={200}
                                                 border={50}
-                                                scale={1.2}
+                                                scale={1}
                                             />
                                         )}
                                     </Grid.Column>
@@ -166,8 +178,8 @@ class UserPanel extends React.Component{
                                         {croppedImage && (
                                             <Image
                                                 style={{margin: "3.5em auto"}}
-                                                width={100}
-                                                height={100}
+                                                width={200}
+                                                height={200}
                                                 src={croppedImage}
                                             />
                                         )}
@@ -192,6 +204,32 @@ class UserPanel extends React.Component{
                                 <Icon name="remove" /> Cancel
                             </Button>
                         </Modal.Actions>
+                    </Modal>
+                    <Modal open={this.state.reset} onClose={this.closeReset} size="mini">
+                        <Modal.Header>
+                            Wachtwoord vergeten
+                        </Modal.Header>
+                        <Modal.Content>
+                            <Form onSubmit={this.handleResetPassword} size="mini">
+                                <Form.Input
+                                    fluid
+                                    name="email"
+                                    icon="mail"
+                                    placeholder="email"
+                                    onChange={this.handleEventChange}
+                                    value={this.state.email}
+                                    type="email"
+                                    iconPosition="left"
+                                />
+                                <Button 
+                                    color="grey"
+                                    fluid
+                                    size="large"
+                                >
+                                    Submit
+                                </Button>
+                            </Form>
+                        </Modal.Content>
                     </Modal>
                 </Grid.Column>
             </Grid>
